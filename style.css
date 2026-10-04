@@ -1,0 +1,503 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+   background: black;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-right: 40px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 22px;
+}
+
+.navbar a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+.nav-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.search {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.bell {
+    font-size: 20px;
+}
+
+.profile {
+    width: 32px;
+    height: 32px;
+    background: #555;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    height: 720px;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 20% 20%, #5B21B6 0%, transparent 30%),
+        radial-gradient(circle at 80% 10%, #E50914 0%, transparent 25%),
+        radial-gradient(circle at 70% 80%, #1D4ED8 0%, transparent 30%),
+        linear-gradient(135deg, #050509, #0B0B14 50%, #120B1F);
+
+        
+   /* background: radial-gradient(
+        circle at 70% 40%,
+        #294d66 0%,
+        #16242f 25%,
+        #080b0d 65%
+    ); */
+    overflow: hidden;
+}
+
+.hero::before {
+    /* content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    right: 5%;
+    top: 80px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        #7c9ca7 0%,
+        #304c59 25%,
+        #111b20 55%,
+        transparent 70%
+    );
+    opacity: 0.7;
+    filter: blur(3px); */
+    display: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 520px;
+    margin-left: 6%;
+    margin-top: 60px;
+}
+
+.small-title {
+    /* color: #ddd; */
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: 0.85;
+    font-weight: 900;
+    letter-spacing: -5px;
+    margin-bottom: 25px;
+    color:rgba(103, 221, 221, 0.901);
+}
+
+.movie-info {
+    display: flex;
+    gap: 15px;
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.buttons button {
+    border: none;
+    padding: 13px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.play-btn {
+    background: white;
+    color: black;
+}
+
+.play-btn:hover {
+    background: #ddd;
+}
+
+.info-btn {
+    background: rgba(100, 100, 100, 0.7);
+    color: white;
+}
+
+.info-btn:hover {
+    background: rgba(130, 130, 130, 0.8);
+}
+
+.hero-gradient {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(
+        transparent,
+        #080808
+    );
+}
+
+/* =========================
+   MOVIE SECTIONS
+========================= */
+main {
+    margin-top: -80px;
+    position: relative;
+    z-index: 5;
+}
+
+.movie-section {
+    padding: 20px 4% 35px;
+     background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(124, 58, 237, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 100%,
+            rgba(220, 38, 38, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #0B0B12,
+            #12101D 45%,
+            #0D0D16
+        );
+}
+
+.movie-section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.movie-row {
+    display: flex;
+    /* gap: 12px; */
+    gap:35px;
+    overflow-x: auto;
+    /* padding: 10px 0 20px; */
+    padding: 20px 4% 30px;
+    scrollbar-width: none;
+}
+
+.movie-row::-webkit-scrollbar {
+    display: none;
+}
+
+/* =========================
+   TOP 10 TRENDING CARDS
+========================= */
+.movie-card {
+    min-width: 180px;
+    width: 180px;
+    height: 270px;
+    position: relative;
+    flex-shrink: 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: scale(1.08);
+    z-index: 10;
+}
+
+.number {
+    position: absolute;
+    bottom: -15px;
+    left: -10px;
+    font-size: 100px;
+    font-weight: 900;
+    color: #080808;
+    -webkit-text-stroke: 2px #aaa;
+    z-index: 4;
+}
+
+.poster {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.poster img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+}
+
+/* =========================
+   NORMAL CARDS (POPULAR / ACTION)
+========================= */
+.normal-card {
+    min-width: 240px;
+    width: 240px;
+    height: 135px;
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-end;
+    padding: 14px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.normal-card:hover {
+    transform: scale(1.06);
+    z-index: 10;
+}
+
+/* Fix: Fill entire card area with image */
+.normal-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+}
+
+/* Dark gradient overlay so white titles stay readable */
+.normal-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.4) 40%,
+        transparent 80%
+    );
+    z-index: 2;
+}
+
+/* Title text sits above the image and gradient */
+.normal-card h3 {
+    position: relative;
+    z-index: 3;
+    font-size: 16px;
+    line-height: 1.1;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    padding: 80px 6% 40px;
+    color: #777;
+       background:
+        radial-gradient(
+            circle at 20% 0%,
+            rgba(124, 58, 237, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 100%,
+            rgba(229, 9, 20, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #08080D 0%,
+            #0E0B18 50%,
+            #09090F 100%
+        );
+
+}
+
+.footer-logo {
+    color: #e50914;
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    color: #777;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+@media (max-width: 768px) {
+    .navbar {
+        height: 60px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .nav-right {
+        gap: 10px;
+    }
+
+    .nav-right > span:not(.search) {
+        display: none;
+    }
+
+    .hero {
+        height: 620px;
+    }
+
+    .hero-content {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .movie-card {
+        min-width: 140px;
+        width: 140px;
+        height: 210px;
+    }
+
+    .number {
+        font-size: 70px;
+    }
+
+    .normal-card {
+        min-width: 180px;
+        width: 180px;
+        height: 105px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+
+.input-box{
+    padding: 0.8vw;
+    border-radius: 0.5vw;
+    width: 70%   ;
+}
+
+
+.input-box:focus{
+    outline : none;
+}
